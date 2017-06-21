@@ -1,12 +1,9 @@
 require 'spec_helper'
 
-RSpec.describe Desplatter do
-  let(:test_class) {
-
-  }
+RSpec.describe Arcade::Desplatter do
 
   class Test
-    include Desplatter
+    include Arcade::Desplatter
 
     def test_method(name, age, email)
       desplat

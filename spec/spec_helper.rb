@@ -1,1 +1,1 @@
-require File.expand_path '../../lib/desplatter.rb', __FILE__
+require File.expand_path '../../lib/arcade', __FILE__
