@@ -1,0 +1,12 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
+    debug_inspector (0.0.3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  binding_of_caller
