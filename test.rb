@@ -1,10 +1,11 @@
-require_relative 'desplatter.rb'
+require_relative 'lib/desplatter'
 
 class Test
   include Desplatter
 
-  def initialize(name, age, email)
+  def set_values(name, age, email)
     desplat
+    @name = "Chris"
     test
   end
 
@@ -33,5 +34,5 @@ class OldTest
   end
 end
 
-Test.new('James McLaren', 20, "james@workplacearcade.com")
+Test.new.set_values('James McLaren', 20, "james@workplacearcade.com")
 # OldTest.new('James McLaren', 20, "james@workplacearcade.com")
