@@ -12,7 +12,7 @@ Desplatter is a gem that simplifies the common pattern often found in command ob
 
 If we take a commonly found example such as:
 
-```
+```ruby
 class Command
   attr_accessor :name, :age, :email
 
@@ -26,7 +26,7 @@ end
 
 We can simplify it as the following:
 
-```
+```ruby
 class Command
   prepend Arcade::Desplatter
 
