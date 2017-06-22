@@ -5,7 +5,7 @@ RSpec.describe Arcade::Desplatter do
   class Test
     include Arcade::Desplatter
 
-    def test_method(name:, age:, email:)
+    def test_method(name, age: , email: nil)
       desplat
     end
   end
@@ -13,7 +13,7 @@ RSpec.describe Arcade::Desplatter do
   let!(:test_instance) { Test.new }
 
   before do
-    test_instance.test_method(name: "James", age: 23, email: "james@workplacearcade.com")
+    test_instance.test_method("James", age: 23, email: "james@workplacearcade.com")
   end
 
   context "Setting instance variables" do
