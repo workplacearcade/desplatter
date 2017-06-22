@@ -3,11 +3,12 @@ require 'spec_helper'
 RSpec.describe Arcade::Desplatter do
 
   class Test
-    include Arcade::Desplatter
+    prepend Arcade::Desplatter
 
     def test_method(name, age: , email: nil)
-      desplat
     end
+
+    desplat :test_method
   end
 
   let!(:test_instance) { Test.new }

@@ -1,12 +1,10 @@
-require_relative 'lib/desplatter'
+require_relative 'lib/arcade.rb'
 
 class Test
-  include Desplatter
+  prepend Arcade::Desplatter
 
   def set_values(name, age, email)
-    desplat
-    @name = "Chris"
-    test
+    puts "Actual"
   end
 
   def test
@@ -14,6 +12,8 @@ class Test
     puts age
     puts email
   end
+
+  desplat :set_values
 end
 
 
@@ -34,5 +34,8 @@ class OldTest
   end
 end
 
-Test.new.set_values('James McLaren', 20, "james@workplacearcade.com")
+puts "We are creating a new Test instance"
+test = Test.new
+puts test.methods.include? :set_values
+test.set_values('James McLaren', 20, "james@workplacearcade.com")
 # OldTest.new('James McLaren', 20, "james@workplacearcade.com")

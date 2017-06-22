@@ -1,4 +1,4 @@
-require 'arcade/desplatter'
+require_relative 'arcade/desplatter.rb'
 
 module Arcade
 

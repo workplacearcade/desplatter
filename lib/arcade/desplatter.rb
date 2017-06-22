@@ -1,15 +1,20 @@
+require 'pry'
 require 'binding_of_caller'
 
 module Arcade
   module Desplatter
-    def desplat
-      calling_binding = binding.of_caller(1)
+    def self.prepended base
+      base.define_singleton_method(:desplat) do |*args|
+        args.each do |arg|
+          params = base.new.method(arg).parameters
 
-      calling_method = caller_locations.first.label.to_sym
-
-      method(calling_method).parameters.map do |_, param|
-        singleton_class.class_eval { attr_accessor param }
-        instance_variable_set("@#{param}", calling_binding.local_variable_get(param))
+          Arcade::Desplatter.send(:define_method, arg) do |*args|
+            params.map do |_, param|
+              singleton_class.class_eval { attr_accessor param }
+              instance_variable_set("@#{param}", args[0])
+            end
+          end
+        end
       end
     end
   end
