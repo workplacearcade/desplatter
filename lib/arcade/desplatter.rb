@@ -2,9 +2,7 @@ require 'binding_of_caller'
 
 module Arcade
   module Desplatter
-    def desplat
-      calling_binding = binding.of_caller(1)
-
+    def desplat(calling_binding = binding.of_caller(1))
       calling_method = caller_locations.first.label.to_sym
 
       method(calling_method).parameters.map do |_, param|
