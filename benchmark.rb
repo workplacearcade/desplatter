@@ -9,24 +9,37 @@ class TestClass
     @age = age
     @email = email
   end
+
+  def other_method(var1, var2)
+    @var1 = var1
+    @var2 = var2
+  end
 end
 
 class DesplatterClass
   prepend Arcade::Desplatter
 
   def initialize(name, age, email)
-    desplat
+    desplat binding
+  end
+
+  def other_method(var1, var2)
+    desplat binding
   end
 end
 
-puts Benchmark.measure {
-  100_000.times do |x|
-    TestClass.new("James", 23, "james@workplacearcade.com")
+Benchmark.bm(10) do |x|
+  x.report("Core method") do
+    100_000.times do
+      obj = TestClass.new("James", 23, "james@workplacearcade.com")
+      obj.other_method(10, 15)
+    end
   end
-}
 
-puts Benchmark.measure {
-  100_000.times do |x|
-    DesplatterClass.new("James", 23, "james@workplacearcade.com")
+  x.report("Desplatter") do
+    100_000.times do
+      obj = DesplatterClass.new("James", 23, "james@workplacearcade.com")
+      obj.other_method(10, 15)
+    end
   end
-}
+end
