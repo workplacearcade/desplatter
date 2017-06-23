@@ -11,8 +11,6 @@ Gem::Specification.new do |s|
   s.description = 'Sets up instance variables and attr_accessors for method arguments'
   s.files = ['lib/desplatter.rb']
 
-  s.add_dependency 'binding_of_caller'
-
   s.test_files    = `git ls-files`.split($RS)
   s.require_paths = ['lib']
 end

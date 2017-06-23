@@ -29,7 +29,7 @@ class DesplatterClass
 end
 
 puts Benchmark.measure {
-  100_000.times do |x|
+  1_000_000.times do |x|
     obj = TestClass.new
     obj.test("James", 23, "james@workplacearcade.com")
     obj.other_method(10, 15)
@@ -37,7 +37,7 @@ puts Benchmark.measure {
 }
 
 puts Benchmark.measure {
-  100_000.times do |x|
+  1_000_000.times do |x|
     obj = DesplatterClass.new
     obj.test("James", 23, "james@workplacearcade.com")
     obj.other_method(10, 15)

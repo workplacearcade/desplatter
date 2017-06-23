@@ -38,4 +38,5 @@ puts "We are creating a new Test instance"
 test = Test.new
 puts test.methods.include? :set_values
 test.set_values('James McLaren', 20, "james@workplacearcade.com")
+puts test.email
 # OldTest.new('James McLaren', 20, "james@workplacearcade.com")
