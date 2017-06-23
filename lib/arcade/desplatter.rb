@@ -3,7 +3,7 @@ module Arcade
     def self.prepended base
       base.define_singleton_method(:desplat) do |*args|
         args.each do |arg|
-          params = base.new.method(arg).parameters
+          params = base.instance_method(arg).parameters
 
           params.map do |_, param|
             base.class_eval { attr_accessor param }
