@@ -33,6 +33,7 @@ Benchmark.bm(10) do |x|
     100_000.times do
       obj = TestClass.new("James", 23, "james@workplacearcade.com")
       obj.other_method(10, 15)
+      obj.name
     end
   end
 
@@ -40,6 +41,7 @@ Benchmark.bm(10) do |x|
     100_000.times do
       obj = DesplatterClass.new("James", 23, "james@workplacearcade.com")
       obj.other_method(10, 15)
+      obj.name
     end
   end
 end
