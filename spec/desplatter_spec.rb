@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-RSpec.describe Arcade::Desplatter do
+RSpec.describe Desplatter do
 
   class Test
-    prepend Arcade::Desplatter
+    prepend Desplatter
 
     def test_method(name, age: , email: nil)
     end

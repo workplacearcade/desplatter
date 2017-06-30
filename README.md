@@ -5,7 +5,7 @@ Desplatter is a gem that simplifies the common pattern often found in command ob
 
 ## Getting Started
 
-1. Add the gem to your Gemfile `gem 'desplatter', :git => 'https://github.com/workplacearcade/desplatter'`
+1. Add the gem to your Gemfile `gem 'desplatter', git: 'https://github.com/workplacearcade/desplatter'`
 2. Run `bundle install`
 
 ## Usage
@@ -28,7 +28,7 @@ We can simplify it as the following:
 
 ```ruby
 class Command
-  prepend Arcade::Desplatter
+  prepend Desplatter
 
   def initialize(name, age, email)
 

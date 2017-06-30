@@ -1,7 +1,7 @@
-require_relative 'lib/arcade.rb'
+require_relative 'lib/desplatter.rb'
 
 class Test
-  prepend Arcade::Desplatter
+  prepend Desplatter
 
   def set_values(name, age, email)
     puts "Actual"

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    desplatter (1.0.0)
+    desplatter (1.0.1)
 
 GEM
   remote: https://rubygems.org/
