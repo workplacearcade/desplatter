@@ -31,11 +31,24 @@ class Command
   prepend Arcade::Desplatter
 
   def initialize(name, age, email)
-    desplat
+
   end
+
+  desplat :initialize
 end
 ```
 
+## Performance
+
+The results of running the benchmarking tests in `benchmark.rb` produce the following:
+
+```
+  0.670000   0.010000   0.680000 (  0.672676)
+  5.060000   0.020000   5.080000 (  5.108522)
+```
+
+While we can see that the core ruby method of doing it is notably faster, in the context of a command object the performance difference is trivial and the convenience is worth it.
+
 ## TO-DO
-- [ ] Benchmark gem performance
+- [x] Benchmark gem performance
 - [ ] Accept array of variable to ignore
