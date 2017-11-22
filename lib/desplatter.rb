@@ -1,5 +1,3 @@
-require 'pry'
-
 module Desplatter
   def self.prepended base
     def desplat(captured_binding)
