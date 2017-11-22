@@ -3,14 +3,8 @@ require_relative 'lib/desplatter.rb'
 class Test
   prepend Desplatter
 
-  def set_values(name, age, email)
+  def set_values(name, age, email: 'test@workplacearcade.com')
     desplat binding
-  end
-
-  def test
-    puts name
-    puts age
-    puts email
   end
 end
 
@@ -34,6 +28,6 @@ end
 
 puts "We are creating a new Test instance"
 test = Test.new
-test.set_values('James McLaren', 20, "james@workplacearcade.com")
+test.set_values('James McLaren', 20)
 puts test.email
 # OldTest.new('James McLaren', 20, "james@workplacearcade.com")
