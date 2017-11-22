@@ -1,7 +1,7 @@
 require_relative 'lib/desplatter.rb'
 
 class Test
-  prepend Desplatter
+  include Desplatter
 
   def set_values(name, age, email: 'test@workplacearcade.com')
     email = 'another_test@workplacearcade.com'
