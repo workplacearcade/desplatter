@@ -4,7 +4,7 @@ class Test
   prepend Desplatter
 
   def set_values(name, age, email)
-    puts "Actual"
+    desplat binding
   end
 
   def test
@@ -12,8 +12,6 @@ class Test
     puts age
     puts email
   end
-
-  desplat :set_values
 end
 
 
@@ -36,7 +34,6 @@ end
 
 puts "We are creating a new Test instance"
 test = Test.new
-puts test.methods.include? :set_values
 test.set_values('James McLaren', 20, "james@workplacearcade.com")
 puts test.email
 # OldTest.new('James McLaren', 20, "james@workplacearcade.com")
