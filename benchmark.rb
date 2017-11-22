@@ -1,5 +1,5 @@
 require 'benchmark'
-require_relative 'lib/arcade.rb'
+require_relative 'lib/desplatter.rb'
 
 class TestClass
   attr_accessor :name, :age, :email, :var1, :var2
@@ -17,19 +17,19 @@ class TestClass
 end
 
 class DesplatterClass
-  prepend Arcade::Desplatter
+  include Desplatter
 
   def test(name, age, email)
+    desplat binding
   end
 
   def other_method(var1, var2)
+    desplat binding
   end
-
-  desplat :test, :other_method
 end
 
 puts Benchmark.measure {
-  1_000_000.times do |x|
+  100_000.times do |x|
     obj = TestClass.new
     obj.test("James", 23, "james@workplacearcade.com")
     obj.other_method(10, 15)
@@ -37,7 +37,7 @@ puts Benchmark.measure {
 }
 
 puts Benchmark.measure {
-  1_000_000.times do |x|
+  100_000.times do |x|
     obj = DesplatterClass.new
     obj.test("James", 23, "james@workplacearcade.com")
     obj.other_method(10, 15)
