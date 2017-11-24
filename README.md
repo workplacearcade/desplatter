@@ -1,4 +1,4 @@
-# `Desplatter`
+# Desplatter
 
 ## What is it?
 Desplatter is a gem that simplifies the common pattern often found in command objects of passing in arguments and then immediately assigning them to instance variables.
