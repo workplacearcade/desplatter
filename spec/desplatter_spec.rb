@@ -6,9 +6,8 @@ RSpec.describe Desplatter do
     prepend Desplatter
 
     def test_method(name, age: , email: nil)
+      desplat binding
     end
-
-    desplat :test_method
   end
 
   let!(:test_instance) { Test.new }
