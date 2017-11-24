@@ -1,42 +1,14 @@
 require_relative 'lib/desplatter.rb'
 
 class Test
-  prepend Desplatter
+  include Desplatter
 
-  def set_values(name, age, email)
-    puts "Actual"
-  end
-
-  def test
-    puts name
-    puts age
-    puts email
-  end
-
-  desplat :set_values
-end
-
-
-class OldTest
-  attr_accessor :name, :age, :email
-
-  def initialize(name, age, email)
-    @name = name
-    @age = age
-    @email = email
-    test
-  end
-
-  def test
-    puts name
-    puts age
-    puts email
+  def set_values(name, age, email: 'test@workplacearcade.com')
+    email = 'another_test@workplacearcade.com'
+    desplat binding
   end
 end
 
-puts "We are creating a new Test instance"
 test = Test.new
-puts test.methods.include? :set_values
-test.set_values('James McLaren', 20, "james@workplacearcade.com")
+test.set_values('James McLaren', 20)
 puts test.email
-# OldTest.new('James McLaren', 20, "james@workplacearcade.com")
