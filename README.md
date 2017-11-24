@@ -5,7 +5,7 @@ Desplatter is a gem that simplifies the common pattern often found in command ob
 
 ## Getting Started
 
-1. Add the gem to your Gemfile `gem 'desplatter', git: 'https://github.com/workplacearcade/desplatter'`
+1. Add the following line your Gemfile `gem 'desplatter', git: 'https://github.com/workplacearcade/desplatter'`
 2. Run `bundle install`
 
 ## Usage
@@ -31,10 +31,8 @@ class Command
   prepend Desplatter
 
   def initialize(name, age, email)
-
+    desplat binding
   end
-
-  desplat :initialize
 end
 ```
 
@@ -43,12 +41,12 @@ end
 The results of running the benchmarking tests in `benchmark.rb` produce the following:
 
 ```
-  0.670000   0.010000   0.680000 (  0.672676)
-  5.060000   0.020000   5.080000 (  5.108522)
+  0.670000   0.010000   0.680000 (  0.082379)
+  5.060000   0.020000   5.080000 (  2.738410)
 ```
 
-While we can see that the core ruby method of doing it is notably faster, in the context of a command object the performance difference is trivial and the convenience is worth it.
+As you can see, desplatter is currently noticably slower than the standard ruby way of writing a command object. That being said, the performance is currently a WIP and hopefully the convenience provided by the gem outweighs the performance detriment.
 
 ## TO-DO
-- [x] Benchmark gem performance
-- [ ] Accept array of variable to ignore
+- [ ] Improve performance in setting attr_accessors
+- [ ] Make desplat method available without prepending
