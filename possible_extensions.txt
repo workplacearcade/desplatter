@@ -1,3 +1,0 @@
--Only set instance variable if not already set?
--Allow conditional variable setting (pass in symbols for variables to skip)
--Test with more complicated argument types
